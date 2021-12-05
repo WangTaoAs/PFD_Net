@@ -1,0 +1,8 @@
+timm==0.3.2
+torch==1.6.0
+numpy==1.20.2
+yacs==0.1.8
+opencv_python==4.5.2.54
+torchvision==0.7.0
+asposestorage==1.0.2
+Pillow==8.4.0

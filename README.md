@@ -102,7 +102,7 @@ python test.py --config_file 'configs/OCC_Duke/skeleton_pfd.yml'
 | TransReID     | 256*128   | 64.2 | 55.7|
 | **PFD**       | 256*128   | **67.7** | **60.1**|
 | TransReID*    | 256*128   | 66.4 | 59.2|
-| **PFD$*$**       | 256*128   | **69.5** | **61.8**|
+| **PFD***       | 256*128   | **69.5** | **61.8**|
 
 $*$means the encoder is with a small step sliding-window setting
 
