@@ -2,7 +2,7 @@
 
 ![Python >=3.6](https://img.shields.io/badge/Python->=3.6-yellow.svg)    ![PyTorch >=1.6](https://img.shields.io/badge/PyTorch->=1.6-blue.svg)
 
-This repo is the official implementation of "**Pose-guided Feature Disentangling for Occluded Person Re-identification based on Transformer(PFD),  Tao Wang, Hong Liu$*$, Pinghao Song, Tianyu Guo& Wei Shi**" in PyTorch.
+This repo is the official implementation of "**Pose-guided Feature Disentangling for Occluded Person Re-identification based on Transformer(PFD),  Tao Wang, Hong Liu, Pinghao Song, Tianyu Guo& Wei Shi**" in PyTorch.
 
 ## Pipeline
 
@@ -75,8 +75,14 @@ We use One GeForce GTX 1080Ti GPU for Training
 Before train the model, please modify the parameters in config file, please refer to Arguments in  [TransReID](https://github.com/damo-cv/TransReID)
 ```
 python occ_train.py --config_file {config_file path}
-#example
+#examples
+1. For Occluded-Duke:
 python occ_train.py --config_file 'configs/OCC_Duke/skeleton_pfd.yml'
+2. For Market-Duke:
+python occ_train.py --config_file 'configs/market1501/skeleton_pfd.yml'
+3. For DUKEMTMC:
+python occ_train.py --config_file 'configs/dukemtmcreid/skeleton_pfd.yml'
+......
 ```
 
 
@@ -85,7 +91,7 @@ python occ_train.py --config_file 'configs/OCC_Duke/skeleton_pfd.yml'
 First download the Occluded-Duke model:[Occluded-Duke](https://drive.google.com/drive/folders/1a6q2nPDlX-ig8sWQh7uNYo1QfhhA2gGD?usp=sharing)
 
 To test on pretrained model on Occ-Duke:
-Modify the pre-trained model path (PRETRAIN_PATH:[ViT_Base](https://drive.google.com/drive/folders/1bZinxHbxIghPNFlwQjkKfPR4SBcZgtYz?usp=sharing), POSE_WEIGHT:[HRNet](https://drive.google.com/drive/folders/1iqXW84trCptYEELlVTB_KgYUCTqkJxsj?usp=sharinghttps://drive.google.com/drive/folders/1iqXW84trCptYEELlVTB_KgYUCTqkJxsj?usp=sharing), WEIGHT:[Occluded-Duke]((https://drive.google.com/drive/folders/1a6q2nPDlX-ig8sWQh7uNYo1QfhhA2gGD?usp=sharing))) in yml, and then run:
+Modify the pre-trained model path (PRETRAIN_PATH:[ViT_Base](https://drive.google.com/drive/folders/1bZinxHbxIghPNFlwQjkKfPR4SBcZgtYz?usp=sharing), POSE_WEIGHT:[HRNet](https://drive.google.com/drive/folders/1iqXW84trCptYEELlVTB_KgYUCTqkJxsj?usp=sharinghttps://drive.google.com/drive/folders/1iqXW84trCptYEELlVTB_KgYUCTqkJxsj?usp=sharing), WEIGHT:[Occluded-Duke](https://drive.google.com/drive/folders/1a6q2nPDlX-ig8sWQh7uNYo1QfhhA2gGD?usp=sharing)) in yml, and then run:
 
 ```
 ## OccDuke for example
@@ -121,6 +127,15 @@ $*$means the encoder is with a small step sliding-window setting
 |  TransReID    | 256*128   | 95.4 | 88.0|
 | **PFD**       | 256*128   | **95.5** | **89.6**|
 
+#### DukeMTMC Results
+| Model         | Image Size|Rank-1 | mAP |
+| :------:      | :------:  |:------: | :------: |
+|  HOReID       | 256*128   | 86.9 | 75.6|
+|  PAT          | 256*128   | 88.8 | 78.2|
+|  TransReID    | 256*128   | 89.6 | 80.6|
+| **PFD**       | 256*128   | **90.6** | **82.2**|
+|  TransReID*   | 256*128   | 90.7 | 82.0|
+| **PFD**       | 256*128   | **91.2** | **83.2**|
 
 
 
@@ -128,14 +143,26 @@ $*$means the encoder is with a small step sliding-window setting
 
 If you find our work useful in your research, please consider citing this paper! (preprint version will be available soon)
 
-<!-- ```
-@article{li2021mhformer,
-  title={Pose-guided Feature Disentangling for Occluded Person Re-identification Based on Transformer},
-  author={Li, Wenhao and Liu, Hong and Tang, Hao and Wang, Pichao and Van Gool, Luc},
-  journal={arXiv preprint arXiv:2111.12707},
-  year={2021}
+Arxiv:
+```
+@misc{wang2021poseguided,
+      title={Pose-guided Feature Disentangling for Occluded Person Re-identification Based on Transformer}, 
+      author={Tao Wang and Hong Liu and Pinhao Song and Tianyu Guo and Wei Shi},
+      year={2021},
+      eprint={2112.02466},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
 }
-``` -->
+```
+AAAI: 
+```
+@article{wang2022pfd,
+  title={Pose-guided Feature Disentangling for Occluded Person Re-identification Based on Transformer},
+  author={Tao Wang, Hong Liu, Pinhao Song, Tianyu Guo and Wei Shi},
+  journal={AAAI},
+  year={2022}
+}
+```
 
 ## Acknowledgement
 
