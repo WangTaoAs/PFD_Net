@@ -278,7 +278,7 @@ class build_skeleton_transformer(nn.Module):
         for i, heatmap in enumerate(ttt):  #[64]
             for j, joint in enumerate(heatmap): #[17]
 
-                if max(joint) > self.skeleton_threshold:
+                if max(joint) < self.skeleton_threshold:
                     skt_ft[i][j] = 1    # Eq 4 in paper
 
         skt_ft = torch.from_numpy(skt_ft).cuda()    #[64, 17]
@@ -369,11 +369,16 @@ class build_skeleton_transformer(nn.Module):
             # non_zero_skt = torch.nonzero(skt_feat).squeeze(1) #[num]
 
             skt_part = skt_feat.cpu().numpy()
-            # skt_ind = np.argwhere(skt_part==0).squeeze(1) #[17-num] numpy type
+            skt_ind = np.argwhere(skt_part==0).squeeze(1) #[17-num] numpy type
 
             for j in range(decoder_feature.shape[1]):
 
-                if skt_feat[ind[i][j]] == 0:
+                # version 1 use original heatmap label
+                # if skt_feat[skt_ind[i][j]] == 0: 
+                #     non_feat = decoder_feature[i, j, :]
+                #     non_skt_feat_list.append(non_feat)
+
+                if skt_feat[ind[i][j]] == 1: # version 2 use PVM label
                     non_feat = decoder_feature[i, j, :]
                     non_skt_feat_list.append(non_feat)
 
@@ -508,7 +513,7 @@ def PVM(matrix, matrix1):
     # skt_num = matrix.shape[1]
     final_sim = F.cosine_similarity(matrix.unsqueeze(2), matrix1.unsqueeze(1), dim=3) #[bs, 17, x] 
 
-    _, ind = torch.max(final_sim, dim=1)    # ind.shape [bs, x]
+    _, ind = torch.max(final_sim, dim=2)    # ind.shape [bs, x]
 
     
     sim_match = []
