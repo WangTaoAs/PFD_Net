@@ -2,7 +2,7 @@
 
 ![Python >=3.6](https://img.shields.io/badge/Python->=3.6-yellow.svg)    ![PyTorch >=1.6](https://img.shields.io/badge/PyTorch->=1.6-blue.svg)
 
-This repo is the official implementation of "**Pose-guided Feature Disentangling for Occluded Person Re-identification based on Transformer(PFD),  Tao Wang, Hong Liu, Pinghao Song, Tianyu Guo& Wei Shi**" in PyTorch.
+This repo is the official implementation of "**Pose-guided Feature Disentangling for Occluded Person Re-identification based on Transformer(PFD),  Tao Wang, Hong Liu, Pinhao Song, Tianyu Guo& Wei Shi**" in PyTorch.
 
 ## Pipeline
 
@@ -135,7 +135,7 @@ $*$means the encoder is with a small step sliding-window setting
 |  TransReID    | 256*128   | 89.6 | 80.6|
 | **PFD**       | 256*128   | **90.6** | **82.2**|
 |  TransReID*   | 256*128   | 90.7 | 82.0|
-| **PFD**       | 256*128   | **91.2** | **83.2**|
+| **PFD***       | 256*128   | **91.2** | **83.2**|
 
 
 
