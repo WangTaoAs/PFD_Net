@@ -2,7 +2,7 @@
 
 ![Python >=3.6](https://img.shields.io/badge/Python->=3.6-yellow.svg)    ![PyTorch >=1.6](https://img.shields.io/badge/PyTorch->=1.6-blue.svg)
 
-This repo is the official implementation of "**Pose-guided Feature Disentangling for Occluded Person Re-identification based on Transformer(PFD),  Tao Wang, Hong Liu, Pinhao Song, Tianyu Guo& Wei Shi**" in PyTorch.(PFD-Net)[https://arxiv.org/abs/2112.02466]
+This repo is the official implementation of "**Pose-guided Feature Disentangling for Occluded Person Re-identification based on Transformer(PFD),  Tao Wang, Hong Liu, Pinhao Song, Tianyu Guo& Wei Shi**" in PyTorch.[PFD-Net](https://arxiv.org/abs/2112.02466)
 
 ## Pipeline
 
