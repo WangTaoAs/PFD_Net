@@ -78,7 +78,7 @@ python occ_train.py --config_file {config_file path}
 #examples
 1. For Occluded-Duke:
 python occ_train.py --config_file 'configs/OCC_Duke/skeleton_pfd.yml'
-2. For Market-Duke:
+2. For Market-1501:
 python occ_train.py --config_file 'configs/market1501/skeleton_pfd.yml'
 3. For DUKEMTMC:
 python occ_train.py --config_file 'configs/dukemtmcreid/skeleton_pfd.yml'
