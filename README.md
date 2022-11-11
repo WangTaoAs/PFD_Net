@@ -156,10 +156,13 @@ Arxiv:
 ```
 AAAI: 
 ```
-@article{wang2022pfd,
-  title={Pose-guided Feature Disentangling for Occluded Person Re-identification Based on Transformer},
-  author={Tao Wang, Hong Liu, Pinhao Song, Tianyu Guo and Wei Shi},
-  journal={AAAI},
+@inproceedings{wang2022pose,
+  title={Pose-guided feature disentangling for occluded person re-identification based on transformer},
+  author={Wang, Tao and Liu, Hong and Song, Pinhao and Guo, Tianyu and Shi, Wei},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={36},
+  number={3},
+  pages={2540--2549},
   year={2022}
 }
 ```
